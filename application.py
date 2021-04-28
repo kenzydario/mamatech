@@ -8,6 +8,6 @@ app.config["DEBUG"] = True
 @app.route('/', methods=['GET'])
 def home():
     n = random.randint(0,100)
-    return n
+    return str(n)
 
 app.run()
