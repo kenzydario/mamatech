@@ -1,7 +1,14 @@
+import flask
+import random
 
-from flask import Flask
-app = Flask(__name__)
+app = flask.Flask(__name__)
+app.config["DEBUG"] = True
 
-@app.route("/")
-def index():
-    return "<h1>Hello Azure!</h1>"
+
+@app.route('/', methods=['GET'])
+def home():
+    n = random.randint(0,100)
+    print(n)
+    return str(n)
+
+app.run()
